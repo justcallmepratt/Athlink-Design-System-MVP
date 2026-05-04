@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Elevation</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 28px; background: var(--gray-50); font-family: var(--font-body); }
+    .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 16px 14px;
+      display: flex; flex-direction: column; gap: 6px;
+      min-height: 90px;
+    }
+    .name { font-weight: 600; font-size: 13px; color: var(--fg-primary); }
+    .role { font-size: 11px; color: var(--fg-tertiary); }
+    .xs { box-shadow: var(--shadow-xs); }
+    .sm { box-shadow: var(--shadow-sm); }
+    .md { box-shadow: var(--shadow-md); }
+    .lg { box-shadow: var(--shadow-lg); }
+    .brand { box-shadow: var(--shadow-brand); border-color: rgba(33,150,243,0.3); }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="card xs"><span class="name">xs</span><span class="role">hairline default</span></div>
+    <div class="card sm"><span class="name">sm</span><span class="role">card resting</span></div>
+    <div class="card md"><span class="name">md</span><span class="role">card hover</span></div>
+    <div class="card lg"><span class="name">lg</span><span class="role">menus, modals</span></div>
+    <div class="card brand"><span class="name">brand glow</span><span class="role">primary CTA hover</span></div>
+  </div>
+</body>
+</html>

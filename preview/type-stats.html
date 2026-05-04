@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Stats & data type</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 22px; background: #fff; font-family: var(--font-body); color: var(--fg-primary); }
+    .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card { padding: 16px 18px; border: 1px solid var(--border-default); border-radius: 12px; background: #fff; }
+    .label { font-size: 12px; color: var(--fg-tertiary); margin-bottom: 4px; }
+    .num {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 30px;
+      letter-spacing: -0.02em; line-height: 1; color: var(--fg-primary);
+      font-variant-numeric: tabular-nums;
+    }
+    .delta { font-size: 11px; color: #16A34A; margin-top: 6px; font-weight: 500; }
+    .mono {
+      font-family: var(--font-mono); font-weight: 600; font-size: 14px;
+      color: var(--brand-blue-700); margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="card">
+      <div class="label">Athletes Viewed</div>
+      <div class="num">234</div>
+      <div class="delta">+12% from last month</div>
+    </div>
+    <div class="card">
+      <div class="label">AI Score</div>
+      <div class="num">95</div>
+      <div class="mono">/ 100</div>
+    </div>
+    <div class="card">
+      <div class="label">40-yard dash</div>
+      <div class="num">4.42<span style="font-size:18px">s</span></div>
+      <div class="mono">PR · 2024</div>
+    </div>
+    <div class="card">
+      <div class="label">Match rate</div>
+      <div class="num">94%</div>
+      <div class="mono">vs 78% avg</div>
+    </div>
+  </div>
+</body>
+</html>

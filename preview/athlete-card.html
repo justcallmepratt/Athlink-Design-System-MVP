@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Athlete card</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 20px; background: var(--gray-50); font-family: var(--font-body); }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card { background: #fff; border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm); }
+    .photo { position: relative; height: 170px; background: linear-gradient(135deg,#1a3a5c,#0f2030); display: grid; place-items: center; }
+    .photo .play { width: 48px; height: 48px; color: #fff; opacity: 0.92; }
+    .photo .play svg { width: 100%; height: 100%; }
+    .badge {
+      position: absolute; font-size: 11px; font-weight: 600;
+      padding: 4px 10px; border-radius: 9999px;
+      white-space: nowrap;
+    }
+    .gpa { top: 12px; right: 12px; background: var(--brand-blue); color: #fff; }
+    .match { top: 12px; left: 12px; background: rgba(255,255,255,0.95); color: var(--gray-900); border: 1px solid var(--border-default); }
+    .country { bottom: 12px; left: 12px; background: rgba(0,0,0,0.65); color: #fff; }
+    .body { padding: 14px 16px; }
+    .head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .av { width: 36px; height: 36px; border-radius: 9999px; background: var(--grad-athlink); color: #fff; display:grid; place-items:center; font-size: 13px; font-weight: 700; }
+    .name { font-weight: 600; font-size: 14px; color: var(--fg-primary); display: flex; gap: 4px; align-items: center; }
+    .name svg { width: 14px; height: 14px; color: var(--brand-blue); }
+    .meta { font-size: 12px; color: var(--fg-tertiary); }
+    .stats { font-size: 12px; color: var(--fg-secondary); margin-top: 4px; }
+    .verify { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .v { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: #00BCD4; white-space: nowrap; }
+    .v svg { width: 12px; height: 12px; }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <div class="photo">
+        <span class="badge gpa">GPA 3.9</span>
+        <span class="badge match">94% Match</span>
+        <span class="badge country">Japan</span>
+        <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="body">
+        <div class="head">
+          <div class="av">TB</div>
+          <div>
+            <div class="name">Tsubasa Brennan
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+            </div>
+            <div class="meta">Football · Wide Receiver</div>
+          </div>
+        </div>
+        <div class="meta">6'1" · 190 lbs · Class of 2025</div>
+        <div class="stats">62 receptions, 1,124 yards, 14 TDs</div>
+        <div class="verify">
+          <span class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg>AI Verified</span>
+          <span class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg>AR Verified</span>
+          <span class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg>NCAA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="photo" style="background: linear-gradient(135deg,#0d3a2a,#06281c);">
+        <span class="badge gpa">GPA 3.8</span>
+        <span class="badge match">92% Match</span>
+        <span class="badge country">Brazil</span>
+        <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="body">
+        <div class="head">
+          <div class="av" style="background:#10B981">LS</div>
+          <div>
+            <div class="name">Lucas Senna
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+            </div>
+            <div class="meta">Soccer · Forward</div>
+          </div>
+        </div>
+        <div class="meta">5'11" · 165 lbs · Class of 2025</div>
+        <div class="stats">18 goals · 12 assists · 82% pass acc.</div>
+        <div class="verify">
+          <span class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg>AI Verified</span>
+          <span class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4 10-10"/></svg>NCAA Cleared</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

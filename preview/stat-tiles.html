@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Stat tile</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 22px; background: var(--gray-50); font-family: var(--font-body); }
+    .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .card { background: #fff; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 20px; }
+    .label { font-size: 13px; color: var(--fg-tertiary); margin-bottom: 6px; }
+    .num { font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1; letter-spacing: -0.02em; color: var(--fg-primary); margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+    .delta { font-size: 11px; color: #16A34A; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
+    .delta.down { color: var(--danger); }
+    .ico { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="card">
+      <div class="label">Athletes Viewed</div>
+      <div class="num">234</div>
+      <div class="delta"><svg class="ico" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>+12% from last month</div>
+    </div>
+    <div class="card">
+      <div class="label">Matched</div>
+      <div class="num">67</div>
+      <div class="delta"><svg class="ico" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>+23% from last month</div>
+    </div>
+    <div class="card">
+      <div class="label">Messages Sent</div>
+      <div class="num">156</div>
+      <div class="delta"><svg class="ico" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>+8% from last month</div>
+    </div>
+    <div class="card">
+      <div class="label">Response Rate</div>
+      <div class="num">78%</div>
+      <div class="delta"><svg class="ico" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>+5% from last month</div>
+    </div>
+  </div>
+</body>
+</html>

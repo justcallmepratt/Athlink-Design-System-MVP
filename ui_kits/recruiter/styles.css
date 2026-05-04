@@ -1,0 +1,224 @@
+/* ============================================================
+   Athlink Recruiter UI kit styles
+   ============================================================ */
+@import url('../../colors_and_type.css');
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-body); color: var(--fg-primary); background: var(--gray-50); }
+
+/* ---- Layout ---- */
+.rk-app { display: flex; min-height: 100vh; }
+.rk-main { flex: 1; min-width: 0; }
+
+/* ---- Sidebar ---- */
+.rk-sidebar {
+  width: 256px; flex: 0 0 256px;
+  background: #fff;
+  border-right: 1px solid var(--border-subtle);
+  padding: 0 16px;
+  position: sticky; top: 0; height: 100vh; overflow: auto;
+}
+.rk-brand {
+  display: flex; align-items: center; gap: 10px;
+  padding: 22px 8px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin: 0 -16px 14px; padding-left: 24px; padding-right: 24px;
+}
+.rk-brand img { width: 32px; height: 32px; object-fit: contain; }
+.rk-brand span {
+  font-family: var(--font-display); font-weight: 800; font-size: 18px;
+  letter-spacing: -0.02em;
+  background: var(--grad-athlink);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.rk-row {
+  width: 100%; display: flex; align-items: center; gap: 12px;
+  padding: 9px 12px; border-radius: 8px; margin-bottom: 2px;
+  font: 500 14px var(--font-body);
+  color: var(--gray-700); background: transparent;
+  border: 0; cursor: pointer; text-align: left;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.rk-row:hover { background: var(--gray-50); }
+.rk-row[data-active="true"] { background: var(--brand-blue); color: #fff; }
+.rk-row-icon { display: inline-flex; }
+.rk-pill {
+  margin-left: auto; font-size: 11px; font-weight: 600;
+  padding: 2px 8px; border-radius: 9999px;
+  background: var(--gray-100); color: var(--gray-700);
+}
+.rk-pill[data-active="true"] { background: rgba(255,255,255,0.22); color: #fff; }
+.rk-dot { margin-left: auto; width: 6px; height: 6px; background: var(--danger); border-radius: 9999px; }
+.rk-divider { height: 1px; background: var(--border-subtle); margin: 14px 0; }
+
+/* ---- Top bar (mobile) ---- */
+.rk-topbar {
+  display: none;
+  background: var(--brand-blue); color: #fff;
+  padding: 14px 16px; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 20;
+}
+.rk-topbar h2 { margin: 0; font-size: 15px; font-weight: 600; }
+.rk-iconbtn {
+  background: transparent; border: 0; color: inherit; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 6px;
+}
+
+/* ---- Page ---- */
+.rk-page { padding: 32px 40px; max-width: 1600px; margin: 0 auto; }
+.rk-page-center { display: flex; flex-direction: column; align-items: center; }
+.rk-page-title { font: 700 30px/1.1 var(--font-display); letter-spacing: -0.02em; margin: 0 0 24px; color: var(--fg-primary); }
+.rk-page-sub { color: var(--fg-tertiary); margin-top: -16px; margin-bottom: 24px; font-size: 14px; }
+
+/* ---- Card ---- */
+.rk-card { background: #fff; border: 1px solid var(--border-subtle); border-radius: 12px; box-shadow: var(--shadow-xs); }
+.rk-section { padding: 24px; }
+.rk-section h3 { margin: 0 0 16px; font: 600 16px/1.2 var(--font-body); color: var(--fg-primary); }
+
+/* ---- Stat tile ---- */
+.rk-stat { padding: 22px; }
+.rk-stat-label { font-size: 13px; color: var(--fg-tertiary); margin-bottom: 6px; }
+.rk-stat-num { font: 700 28px/1 var(--font-display); letter-spacing: -0.02em; margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+.rk-stat-delta { font-size: 11px; color: var(--success); font-weight: 500; }
+
+.rk-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.rk-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rk-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 32px; }
+
+/* ---- Distribution rows ---- */
+.rk-dist-row { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-size: 13px; color: var(--fg-secondary); }
+.rk-dist-row > span:first-child { flex: 0 0 100px; color: var(--fg-primary); font-weight: 500; }
+.rk-dist-rail { flex: 1; height: 8px; background: var(--gray-100); border-radius: 9999px; overflow: hidden; }
+.rk-dist-bar { height: 100%; background: var(--grad-cyan-blue); border-radius: 9999px; }
+.rk-dist-pct { font-family: var(--font-mono); font-size: 12px; color: var(--fg-tertiary); width: 40px; text-align: right; }
+
+.rk-section-head { display: flex; justify-content: space-between; align-items: center; margin: 8px 0 16px; }
+.rk-section-head h3 { margin: 0; font: 600 18px/1.2 var(--font-body); }
+.rk-tag-row { display: flex; gap: 8px; }
+
+/* ---- Athlete card ---- */
+.rk-athlete { padding: 0; overflow: hidden; cursor: pointer; transition: box-shadow var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+.rk-athlete:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.rk-athlete-photo { position: relative; height: 180px; display: grid; place-items: center; }
+.rk-athlete-photo > .rk-badge { position: absolute; }
+.rk-athlete-photo > .rk-badge.rk-badge-gpa { top: 12px; right: 12px; }
+.rk-athlete-photo > .rk-badge.rk-badge-match { top: 12px; left: 12px; }
+.rk-athlete-photo > .rk-badge.rk-badge-country { bottom: 12px; left: 12px; }
+.rk-save {
+  position: absolute; bottom: 12px; right: 12px;
+  width: 36px; height: 36px; border-radius: 9999px;
+  background: rgba(0,0,0,0.45); border: 0; color: #fff; cursor: pointer;
+  display: grid; place-items: center;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.rk-save[data-saved="true"] { background: var(--danger); }
+.rk-play { color: rgba(255,255,255,0.95); }
+.rk-play svg { width: 44px; height: 44px; }
+.rk-athlete-body { padding: 14px 16px 16px; }
+.rk-athlete-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rk-avatar { width: 36px; height: 36px; border-radius: 9999px; background: var(--grad-athlink); color: #fff; display:grid; place-items: center; font-size: 12px; font-weight: 700; flex: 0 0 36px; }
+.rk-athlete-name { font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 4px; }
+.rk-verify-ico { display: inline-flex; }
+.rk-verify-ico svg { width: 14px; height: 14px; color: var(--brand-blue); }
+.rk-athlete-meta { font-size: 12px; color: var(--fg-tertiary); }
+.rk-athlete-stats { font-size: 12px; color: var(--fg-secondary); margin: 6px 0; }
+.rk-verify { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.rk-v { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; color: #00BCD4; font-weight: 500; }
+
+/* ---- Badges ---- */
+.rk-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 500;
+  padding: 4px 10px; border-radius: 9999px;
+  border: 1px solid transparent; white-space: nowrap;
+}
+.rk-badge-ico { display: inline-flex; }
+.rk-badge-gpa { background: var(--brand-blue); color: #fff; }
+.rk-badge-match { background: rgba(255,255,255,0.95); color: var(--gray-900); border-color: var(--border-default); }
+.rk-badge-country { background: rgba(0,0,0,0.65); color: #fff; }
+.rk-badge-outline { background: #fff; color: var(--fg-secondary); border-color: var(--border-default); cursor: pointer; }
+.rk-badge-ai { background: #F3E8FF; color: #6B21A8; }
+.rk-badge-dark { background: rgba(0,0,0,0.6); color: #fff; backdrop-filter: blur(6px); }
+
+/* ---- Discover swipe ---- */
+.rk-discover-sub { color: var(--fg-tertiary); font-size: 14px; margin-top: -16px; margin-bottom: 24px; }
+.rk-swipe-wrap { width: 380px; }
+.rk-swipe-card {
+  position: relative; border-radius: 16px; overflow: hidden;
+  height: 540px;
+  box-shadow: var(--shadow-lg);
+}
+.rk-swipe-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%); }
+.rk-swipe-top { position: absolute; top: 16px; left: 16px; right: 16px; display: flex; justify-content: space-between; }
+.rk-swipe-info { position: absolute; top: 16px; right: 16px; color: #fff; background: rgba(255,255,255,0.18); border-radius: 9999px; }
+.rk-swipe-bottom { position: absolute; left: 20px; right: 20px; bottom: 24px; color: #fff; }
+.rk-swipe-name { font: 800 26px/1.1 var(--font-display); letter-spacing: -0.02em; }
+.rk-swipe-meta { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+.rk-swipe-stats { font-size: 13px; opacity: 0.85; margin-top: 8px; }
+.rk-swipe-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.rk-swipe-actions { display: flex; justify-content: center; gap: 18px; margin-top: 24px; }
+.rk-action {
+  width: 60px; height: 60px; border-radius: 9999px;
+  border: 0; cursor: pointer; display: grid; place-items: center;
+  background: #fff; box-shadow: var(--shadow-md);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.rk-action:hover { transform: translateY(-2px); }
+.rk-action svg { width: 24px; height: 24px; }
+.rk-action-pass { color: var(--danger); }
+.rk-action-info { color: #8B5CF6; }
+.rk-action-match { color: #fff; background: var(--grad-athlink); }
+.rk-discover-progress { font-size: 13px; color: var(--fg-tertiary); margin-top: 16px; }
+
+/* ---- Messages ---- */
+.rk-thread {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.rk-thread:last-child { border-bottom: 0; }
+.rk-thread:hover { background: var(--gray-50); }
+.rk-thread[data-unread="true"] { background: var(--brand-blue-50); }
+.rk-thread-row1 { display: flex; justify-content: space-between; gap: 8px; }
+.rk-thread-name { font-weight: 600; font-size: 14px; }
+.rk-thread-time { font-size: 11px; color: var(--fg-tertiary); }
+.rk-thread-last { font-size: 13px; color: var(--fg-secondary); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rk-unread-dot { width: 8px; height: 8px; background: var(--brand-blue); border-radius: 9999px; flex: 0 0 8px; }
+
+/* ---- Buttons ---- */
+.rk-btn {
+  display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+  font: 500 14px var(--font-body); padding: 10px 18px;
+  border-radius: 8px; border: 1px solid transparent; cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+}
+.rk-btn-primary { background: var(--brand-blue); color: #fff; }
+.rk-btn-primary:hover { background: var(--brand-blue-700); box-shadow: var(--shadow-brand); }
+.rk-btn-secondary { background: #fff; color: var(--fg-primary); border-color: var(--border-default); }
+.rk-btn-secondary:hover { background: var(--gray-50); }
+.rk-btn-gradient { background: var(--grad-athlink); color: #fff; box-shadow: 0 4px 12px -2px rgba(33,150,243,0.4); }
+
+/* ---- Empty ---- */
+.rk-empty { grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--fg-tertiary); font-size: 14px; }
+
+/* ---- Sheet (athlete detail) ---- */
+.rk-sheet-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  display: grid; place-items: center; z-index: 50;
+  padding: 40px 20px; overflow: auto;
+}
+.rk-sheet { background: #fff; border-radius: 16px; max-width: 560px; width: 100%; overflow: hidden; box-shadow: var(--shadow-xl); }
+.rk-sheet-photo { position: relative; height: 220px; }
+.rk-sheet-photo > .rk-badge { position: absolute; }
+.rk-sheet-photo > .rk-badge.rk-badge-match { top: 16px; left: 16px; }
+.rk-sheet-photo > .rk-badge.rk-badge-ai    { top: 16px; left: 130px; }
+.rk-sheet-close { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.5); color: #fff; border-radius: 9999px; }
+.rk-sheet-body { padding: 24px; }
+.rk-sheet-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.rk-sheet-name { font: 700 22px/1.1 var(--font-display); letter-spacing: -0.02em; display: flex; align-items: center; }
+.rk-mono-list { font-family: var(--font-mono); font-size: 13px; color: var(--brand-blue-700); line-height: 1.7; }
+.rk-cta-row { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }

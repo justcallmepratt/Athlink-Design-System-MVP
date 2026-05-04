@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Sport accent colors</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 20px; background: #fff; font-family: var(--font-body); }
+    .row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; }
+    .chip {
+      border-radius: 12px; padding: 14px 10px; min-height: 100px;
+      display: flex; flex-direction: column; gap: 8px;
+      color: #fff;
+    }
+    .chip .label { font-size: 12px; font-weight: 600; }
+    .chip .hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.85; }
+    .chip svg { width: 22px; height: 22px; stroke-width: 2; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="chip" style="background:#F59E0B"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg><span class="label">Football</span><span class="hex">#F59E0B</span></div>
+    <div class="chip" style="background:#10B981"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 3l4 6-4 4-4-4z"/></svg><span class="label">Soccer</span><span class="hex">#10B981</span></div>
+    <div class="chip" style="background:#F97316"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M3 12c4 0 6-3 9-3s5 3 9 3"/></svg><span class="label">Basketball</span><span class="hex">#F97316</span></div>
+    <div class="chip" style="background:#EC4899"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><span class="label">Volleyball</span><span class="hex">#EC4899</span></div>
+    <div class="chip" style="background:#6366F1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 6l4 12M19 6l-4 12"/></svg><span class="label">Baseball</span><span class="hex">#6366F1</span></div>
+    <div class="chip" style="background:#14B8A6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 18l5-5 4 3 9-9"/></svg><span class="label">Track</span><span class="hex">#14B8A6</span></div>
+    <div class="chip" style="background:#84CC16"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg><span class="label">Tennis</span><span class="hex">#84CC16</span></div>
+    <div class="chip" style="background:#06B6D4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg><span class="label">Swimming</span><span class="hex">#06B6D4</span></div>
+  </div>
+</body>
+</html>

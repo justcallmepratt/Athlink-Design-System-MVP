@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Brand mark</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 24px; display: flex; align-items: center; gap: 28px; background: #fff; }
+    .logo-wrap {
+      width: 96px; height: 96px; border-radius: 20px;
+      background: var(--bg-page);
+      border: 1px solid var(--border-default);
+      display: grid; place-items: center; flex: 0 0 auto;
+      overflow: hidden;
+    }
+    .logo-wrap img { width: 84px; height: 84px; object-fit: contain; }
+    .stack { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .wordmark {
+      font-family: var(--font-display);
+      font-size: 44px; font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1;
+      background: var(--grad-athlink);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .tagline {
+      color: var(--fg-secondary); font-size: 14px; max-width: 380px;
+      line-height: 1.45;
+    }
+    .meta { display: flex; gap: 8px; margin-top: 4px; }
+    .pill {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--brand-blue-700);
+      background: var(--brand-blue-50);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .pill.alt { color: var(--success-fg); background: var(--success-bg); }
+  </style>
+</head>
+<body>
+  <div class="logo-wrap"><img src="../assets/athlink-logo.png" alt="Athlink logo" /></div>
+  <div class="stack">
+    <div class="wordmark">AthLink</div>
+    <div class="tagline">A runner inside a chain link — motion + connection. Blue → cyan → green gradient signals trust shifting into growth.</div>
+    <div class="meta">
+      <span class="pill">Primary mark</span>
+      <span class="pill alt">PNG · 1024²</span>
+    </div>
+  </div>
+</body>
+</html>

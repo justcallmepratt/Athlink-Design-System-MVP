@@ -1,0 +1,287 @@
+/* ============================================================
+   Athlink Design System — Color & Type Tokens
+   ============================================================
+   Source of truth for the Athlink MVP recruiting platform.
+   Brand DNA: athletic energy, international diversity, trust.
+   Color story: Sports blue (#2196F3) anchors a fresh teal→green
+   gradient (#00BCD4 → #4CAF50) used for AI/data accents.
+   ============================================================ */
+
+/* ---- Web fonts ----------------------------------------------
+   The codebase relies on Tailwind defaults + system stack.
+   We standardize on Inter for UI/body, Plus Jakarta Sans for
+   display, and JetBrains Mono for stats/data callouts. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+
+:root {
+  /* ============== BRAND ============== */
+  --brand-blue:        #2196F3;  /* Primary — buttons, active nav, links */
+  --brand-blue-600:    #1E88E5;  /* Hover state for primary */
+  --brand-blue-700:    #1976D2;  /* Active/press state */
+  --brand-blue-50:     #E3F2FD;  /* Tints, badges, selected rows */
+  --brand-cyan:        #00BCD4;  /* Gradient stop, AI accent */
+  --brand-green:       #4CAF50;  /* Gradient end, "verified" green */
+  --brand-green-600:   #43A047;
+  --brand-green-50:    #E8F5E9;
+
+  /* The signature Athlink gradient — used sparingly for hero
+     marks, "AI Verified" pills, key data viz bars. */
+  --grad-athlink:      linear-gradient(135deg, #2196F3 0%, #00BCD4 50%, #4CAF50 100%);
+  --grad-athlink-soft: linear-gradient(135deg, #00BCD4 0%, #2196F3 100%);
+  --grad-cyan-blue:    linear-gradient(90deg, #00BCD4 0%, #2196F3 100%);
+
+  /* ============== NEUTRALS (Tailwind gray scale) ============== */
+  --gray-50:   #F9FAFB;  /* Page background */
+  --gray-100:  #F3F4F6;  /* Card hover, subtle dividers */
+  --gray-200:  #E5E7EB;  /* Default borders */
+  --gray-300:  #D1D5DB;
+  --gray-400:  #9CA3AF;
+  --gray-500:  #6B7280;  /* Secondary text, captions */
+  --gray-600:  #4B5563;  /* Body text */
+  --gray-700:  #374151;
+  --gray-800:  #1F2937;
+  --gray-900:  #111827;  /* Primary text, headings */
+
+  /* ============== SEMANTIC ============== */
+  --bg-page:        var(--gray-50);
+  --bg-surface:     #FFFFFF;
+  --bg-surface-2:   var(--gray-50);
+  --bg-overlay:     rgba(0, 0, 0, 0.4);
+  --bg-overlay-dark: rgba(0, 0, 0, 0.6);
+
+  --fg-primary:    var(--gray-900);
+  --fg-secondary:  var(--gray-600);
+  --fg-tertiary:   var(--gray-500);
+  --fg-quaternary: var(--gray-400);
+  --fg-on-brand:   #FFFFFF;
+  --fg-link:       var(--brand-blue);
+
+  --border-subtle: var(--gray-100);
+  --border-default: var(--gray-200);
+  --border-strong: var(--gray-300);
+
+  /* ============== STATUS ============== */
+  --success:       #16A34A;   /* "+12% from last month", verified */
+  --success-bg:    #DCFCE7;
+  --success-fg:    #166534;
+  --warning:       #F59E0B;   /* Pending review */
+  --warning-bg:    #FEF3C7;
+  --warning-fg:    #92400E;
+  --danger:        #EF4444;   /* Pass/X swipe, alerts, dot badges */
+  --danger-bg:     #FEE2E2;
+  --danger-fg:     #991B1B;
+  --info:          var(--brand-blue);
+  --info-bg:       var(--brand-blue-50);
+
+  /* Sport-specific accents (used in athlete cards, filters) */
+  --sport-football:    #F59E0B;
+  --sport-soccer:      #10B981;
+  --sport-basketball:  #F97316;
+  --sport-volleyball:  #EC4899;
+  --sport-baseball:    #6366F1;
+  --sport-track:       #14B8A6;
+  --sport-tennis:      #84CC16;
+  --sport-swimming:    #06B6D4;
+
+  /* AI / verification accent — used on AI Score badges, scan icons */
+  --ai-accent:     #8B5CF6;   /* Subtle purple for "Brain"/AI features */
+  --ai-accent-bg:  #F3E8FF;
+
+  /* ============== TYPE FAMILIES ============== */
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ============== TYPE SCALE ============== */
+  /* Mobile-first; the app is built mobile-first then scales up.
+     Heading sizes intentionally tight — Athlink uses size+weight,
+     not heavy display type, to keep the UI dense & utilitarian. */
+  --text-xs:   0.75rem;   /* 12px — meta, captions, badges */
+  --text-sm:   0.875rem;  /* 14px — body small, nav labels */
+  --text-base: 1rem;      /* 16px — body default */
+  --text-lg:   1.125rem;  /* 18px — emphasized body */
+  --text-xl:   1.25rem;   /* 20px — section titles */
+  --text-2xl:  1.5rem;    /* 24px — card heroes, h2 */
+  --text-3xl:  1.875rem;  /* 30px — stats numbers, h1 mobile */
+  --text-4xl:  2.25rem;   /* 36px — page titles */
+  --text-5xl:  3rem;      /* 48px — hero numbers, marketing */
+  --text-6xl:  3.75rem;   /* 60px — landing hero only */
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+  --weight-extrabold: 800;
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.02em;
+  --tracking-caps:   0.06em;  /* For ALL-CAPS micro labels */
+
+  /* ============== RADII ============== */
+  --radius-xs:   4px;
+  --radius-sm:   6px;    /* Badges, small chips */
+  --radius-md:   8px;    /* Inputs, buttons (default) */
+  --radius-lg:   12px;   /* Cards (default `rounded-lg` in code) */
+  --radius-xl:   16px;   /* Larger cards, sheets */
+  --radius-2xl:  20px;
+  --radius-3xl:  24px;
+  --radius-full: 9999px; /* Pills, avatars, swipe action buttons */
+
+  /* ============== SPACING (4-pt grid) ============== */
+  --space-0:  0;
+  --space-1:  0.25rem;   /* 4 */
+  --space-2:  0.5rem;    /* 8 */
+  --space-3:  0.75rem;   /* 12 */
+  --space-4:  1rem;      /* 16 */
+  --space-5:  1.25rem;   /* 20 */
+  --space-6:  1.5rem;    /* 24 — card inner padding */
+  --space-8:  2rem;      /* 32 — section gap */
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* ============== ELEVATION ============== */
+  /* Athlink leans on hairline borders + subtle shadows. */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 4px 8px -2px rgba(16, 24, 40, 0.08), 0 2px 4px -2px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+  --shadow-xl: 0 20px 24px -4px rgba(16, 24, 40, 0.10), 0 8px 8px -4px rgba(16, 24, 40, 0.04);
+  --shadow-brand: 0 8px 24px -4px rgba(33, 150, 243, 0.35);  /* Glow on primary CTAs */
+
+  /* ============== Z-INDEX ============== */
+  --z-base:    0;
+  --z-overlay: 10;
+  --z-sticky:  20;
+  --z-modal:   50;
+  --z-toast:   100;
+
+  /* ============== MOTION ============== */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    150ms;
+  --dur-base:    200ms;
+  --dur-slow:    300ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   Apply to elements directly OR as @apply / class hooks.
+   ============================================================ */
+html, body {
+  font-family: var(--font-body);
+  color: var(--fg-primary);
+  background: var(--bg-page);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.h-display {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+}
+
+h3, .h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--fg-primary);
+}
+
+h4, .h4 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--fg-primary);
+}
+
+p, .body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--fg-secondary);
+}
+
+.body-sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--fg-secondary);
+}
+
+.caption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  color: var(--fg-tertiary);
+}
+
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--fg-tertiary);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-primary);
+}
+
+code, .code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  font-weight: var(--weight-medium);
+}
+
+a, .link {
+  color: var(--fg-link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover, .link:hover {
+  color: var(--brand-blue-700);
+  text-decoration: underline;
+}
+
+/* Gradient text — used for hero "Athlink" wordmark and key callouts */
+.text-gradient {
+  background: var(--grad-athlink);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

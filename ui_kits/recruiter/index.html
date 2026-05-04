@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Recruiter UI kit</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel" src="views.jsx"></script>
+
+  <script type="text/babel">
+    const ATHLETES = [
+      { id: 1, name: 'Tsubasa Brennan', initials: 'TB', av: 'linear-gradient(135deg,#2196F3,#00BCD4)',
+        sport: 'Football', position: 'Wide Receiver', country: 'Japan',
+        gpa: '3.9', match: 94, aiScore: 95,
+        height: "6'1\"", weight: '190 lbs', year: '2025',
+        stats: '62 receptions · 1,124 yards · 14 TDs',
+        bg: 'linear-gradient(135deg,#1a3a5c 0%,#0f2030 100%)',
+        insight: 'Exceptional route precision with NFL-level footwork. Elite separation skills at the top of routes.' },
+      { id: 2, name: 'Lucas Senna', initials: 'LS', av: '#10B981',
+        sport: 'Soccer', position: 'Forward', country: 'Brazil',
+        gpa: '3.8', match: 92, aiScore: 94,
+        height: "5'11\"", weight: '165 lbs', year: '2025',
+        stats: '18 goals · 12 assists · 82% pass acc.',
+        bg: 'linear-gradient(135deg,#0d3a2a,#06281c)',
+        insight: 'Exceptional technical skills with elite ball control. Natural finisher with both feet.' },
+      { id: 3, name: 'Yuki Tanaka', initials: 'YT', av: '#F97316',
+        sport: 'Basketball', position: 'Point Guard', country: 'Japan',
+        gpa: '3.9', match: 95, aiScore: 96,
+        height: "6'0\"", weight: '170 lbs', year: '2025',
+        stats: '24.3 PPG · 9.1 APG · 51% FG · 41% 3PT',
+        bg: 'linear-gradient(135deg,#3a1f0c,#1a0e05)',
+        insight: 'Elite court vision and basketball IQ. Exceptional ball-handling, breaks down defenses.' },
+      { id: 4, name: 'Ana Senna', initials: 'AS', av: '#EC4899',
+        sport: 'Volleyball', position: 'Outside Hitter', country: 'Brazil',
+        gpa: '4.0', match: 98, aiScore: 97,
+        height: "6'1\"", weight: '155 lbs', year: '2025',
+        stats: '4.2 kills/set · .385 hit % · 1.2 blocks/set',
+        bg: 'linear-gradient(135deg,#3d0f29,#1d0814)',
+        insight: 'Outstanding attacking presence with powerful swing mechanics. Natural leader.' },
+      { id: 5, name: 'Diego Martinez', initials: 'DM', av: '#6366F1',
+        sport: 'Baseball', position: 'Pitcher', country: 'Mexico',
+        gpa: '3.7', match: 88, aiScore: 90,
+        height: "6'3\"", weight: '195 lbs', year: '2025',
+        stats: '2.1 ERA · 95 K · 92 mph fastball',
+        bg: 'linear-gradient(135deg,#1c2455,#0c1029)',
+        insight: 'Excellent arm strength with three quality pitches. Mechanics clean, repeatable delivery.' },
+      { id: 6, name: 'Sofia Kowalski', initials: 'SK', av: '#14B8A6',
+        sport: 'Track & Field', position: '400m / 800m', country: 'Canada',
+        gpa: '3.9', match: 91, aiScore: 93,
+        height: "5'8\"", weight: '135 lbs', year: '2025',
+        stats: '52.3s (400m) · 2:01.8 (800m)',
+        bg: 'linear-gradient(135deg,#0c3a3a,#06201f)',
+        insight: 'Elite speed and endurance combination. Outstanding race strategy and pacing.' },
+    ];
+
+    function App() {
+      const [active, setActive] = React.useState('dashboard');
+      const [open, setOpen] = React.useState(null);
+      const [saved, setSaved] = React.useState([1, 3]);
+      const [swipeIdx, setSwipeIdx] = React.useState(0);
+      const toggleSave = id =>
+        setSaved(s => s.includes(id) ? s.filter(x => x !== id) : [...s, id]);
+      const onOpen = a => setOpen(a);
+
+      const titleMap = {
+        dashboard: 'Dashboard', discover: 'Discover', saved: 'Saved Athletes',
+        messages: 'Messages', compare: 'Compare', reports: 'AI Reports',
+        sponsors: 'Sponsors', federations: 'Federations', nil: 'NIL Deals',
+        camps: 'Summer Camps', contracts: 'Contracts', profile: 'Profile',
+      };
+
+      return (
+        <div className="rk-app">
+          <Sidebar active={active} onChange={setActive}
+            savedCount={saved.length} compareCount={2} />
+          <div className="rk-main">
+            <TopBar title={titleMap[active] || ''} />
+            {active === 'dashboard' && <DashboardView athletes={ATHLETES} onOpen={onOpen} saved={saved} toggleSave={toggleSave} />}
+            {active === 'discover' && <DiscoverView athletes={ATHLETES} idx={swipeIdx} setIdx={setSwipeIdx} />}
+            {active === 'saved' && <SavedView athletes={ATHLETES} saved={saved} onOpen={onOpen} toggleSave={toggleSave} />}
+            {active === 'messages' && <MessagesView />}
+            {!['dashboard','discover','saved','messages'].includes(active) && (
+              <div className="rk-page">
+                <h1 className="rk-page-title">{titleMap[active]}</h1>
+                <div className="rk-card rk-section" style={{ textAlign: 'center', padding: 60, color: 'var(--fg-tertiary)' }}>
+                  This surface follows the same patterns shown across Dashboard, Discover, Saved and Messages. See <code>RecruiterApp.tsx</code> in the source repo for the full implementation.
+                </div>
+              </div>
+            )}
+          </div>
+          <ProfileSheet a={open} onClose={() => setOpen(null)}
+            saved={open && saved.includes(open.id)}
+            onSave={() => open && toggleSave(open.id)} />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

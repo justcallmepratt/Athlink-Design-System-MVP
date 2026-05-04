@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Logo lockups</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 20px; background: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .tile { padding: 18px; border-radius: 12px; display: flex; align-items: center; gap: 12px; }
+    .tile.light { background: #fff; border: 1px solid var(--border-default); }
+    .tile.gray  { background: var(--gray-50); border: 1px solid var(--border-subtle); }
+    .tile.dark  { background: var(--gray-900); }
+    .tile.brand {
+      background: var(--grad-athlink);
+    }
+    .mark { width: 44px; height: 44px; border-radius: 10px; background: #fff; display: grid; place-items: center; flex: 0 0 auto; }
+    .mark img { width: 38px; height: 38px; object-fit: contain; }
+    .name { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+    .name.light { color: var(--gray-900); }
+    .name.invert { color: #fff; }
+    .name.grad {
+      background: var(--grad-athlink);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .label { font-size: 11px; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-left: auto; font-weight: 600; }
+    .label.invert { color: rgba(255,255,255,0.85); }
+  </style>
+</head>
+<body>
+  <div class="tile light">
+    <div class="mark"><img src="../assets/athlink-logo.png" alt="" /></div>
+    <span class="name grad">AthLink</span>
+    <span class="label">Light</span>
+  </div>
+  <div class="tile gray">
+    <div class="mark"><img src="../assets/athlink-logo.png" alt="" /></div>
+    <span class="name light">AthLink</span>
+    <span class="label">Surface</span>
+  </div>
+  <div class="tile dark">
+    <div class="mark"><img src="../assets/athlink-logo.png" alt="" /></div>
+    <span class="name invert">AthLink</span>
+    <span class="label invert">Dark</span>
+  </div>
+  <div class="tile brand">
+    <div class="mark"><img src="../assets/athlink-logo.png" alt="" /></div>
+    <span class="name invert">AthLink</span>
+    <span class="label invert">Brand</span>
+  </div>
+</body>
+</html>

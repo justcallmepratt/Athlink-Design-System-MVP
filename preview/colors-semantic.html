@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Status & semantic colors</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 20px; background: #fff; font-family: var(--font-body); }
+    .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .card { border-radius: 12px; overflow: hidden; border: 1px solid var(--border-default); display: flex; flex-direction: column; }
+    .card .swatch { height: 56px; }
+    .card .body { padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+    .card .name { font-size: 13px; font-weight: 600; color: var(--fg-primary); }
+    .card .hex  { font-family: var(--font-mono); font-size: 11px; color: var(--fg-tertiary); }
+    .pill {
+      align-self: flex-start;
+      font-size: 10px; font-weight: 600;
+      padding: 2px 8px; border-radius: 999px;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="card"><div class="swatch" style="background:#16A34A"></div><div class="body">
+      <span class="pill" style="background:#DCFCE7;color:#166534">Success</span>
+      <span class="name">+12% from last month</span><span class="hex">#16A34A · bg #DCFCE7</span></div></div>
+    <div class="card"><div class="swatch" style="background:#F59E0B"></div><div class="body">
+      <span class="pill" style="background:#FEF3C7;color:#92400E">Warning</span>
+      <span class="name">Pending Review</span><span class="hex">#F59E0B · bg #FEF3C7</span></div></div>
+    <div class="card"><div class="swatch" style="background:#EF4444"></div><div class="body">
+      <span class="pill" style="background:#FEE2E2;color:#991B1B">Danger</span>
+      <span class="name">Pass · alert dot</span><span class="hex">#EF4444 · bg #FEE2E2</span></div></div>
+    <div class="card"><div class="swatch" style="background:#2196F3"></div><div class="body">
+      <span class="pill" style="background:#E3F2FD;color:#1976D2">Info</span>
+      <span class="name">NCAA Cleared</span><span class="hex">#2196F3 · bg #E3F2FD</span></div></div>
+    <div class="card"><div class="swatch" style="background:#8B5CF6"></div><div class="body">
+      <span class="pill" style="background:#F3E8FF;color:#6B21A8">AI</span>
+      <span class="name">AI Score · Brain</span><span class="hex">#8B5CF6 · bg #F3E8FF</span></div></div>
+  </div>
+</body>
+</html>

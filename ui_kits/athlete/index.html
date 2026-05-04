@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Athlete UI kit</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel">
+    const ME = {
+      name: 'Tsubasa Brennan', initials: 'TB',
+      position: 'WR · #18', school: 'Koshien Bowl HS',
+      country: 'Japan', gpa: '3.9', year: '2025',
+      bg: 'linear-gradient(135deg,#1a3a5c 0%,#0f2030 100%)',
+    };
+
+    function Home() {
+      return (
+        <Phone header={null}>
+          <ProfileHero a={ME} />
+          <StatRow stats={[
+            { value: '95',  label: 'AI Score' },
+            { value: '94%', label: 'Match' },
+            { value: '11',  label: 'Games' },
+          ]} />
+
+          <div className="ak-section-title" style={{ marginTop: 18 }}>
+            <span>AI Scouting Report</span>
+            <a href="#">View →</a>
+          </div>
+          <AIScoreCard score={95} />
+
+          <div className="ak-section-title">
+            <span>You have a new match</span>
+          </div>
+          <div className="ak-match-alert">
+            <div className="ak-match-icon">{ai.spark}</div>
+            <div className="ak-match-text"><b>UCLA Football</b> wants to talk. <br/>Coach Davis · 10 min ago</div>
+            <span className="ak-match-cta">Reply</span>
+          </div>
+
+          <div className="ak-section-title">
+            <span>Highlights</span>
+            <a href="#">All 9</a>
+          </div>
+          <div className="ak-video-grid">
+            <VideoTile title="Koshien Bowl Championship 2024" dur="2:14"
+              bg="linear-gradient(135deg,#1a3a5c,#0f2030)" />
+            <VideoTile title="Japan vs USA All-Stars" dur="3:32"
+              bg="linear-gradient(135deg,#3a1f0c,#1a0e05)" />
+            <VideoTile title="Season highlights · Wide Receiver" dur="4:08"
+              bg="linear-gradient(135deg,#0d3a2a,#06281c)" />
+            <VideoTile title="Combine · 40-yard dash 4.42s" dur="0:48"
+              bg="linear-gradient(135deg,#3d0f29,#1d0814)" />
+          </div>
+
+          <div className="ak-section-title">
+            <span>Combine metrics</span>
+          </div>
+          <div className="ak-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, padding: 14 }}>
+            {[
+              ['40-yd', '4.42s'], ['Vertical', '36"'],
+              ['Shuttle', '4.15s'], ['Bench', '225 ×10'],
+              ['Wingspan', "6'3\""], ['3-cone', '6.89s'],
+            ].map(([k, v], i) => (
+              <div key={i} style={{ display:'flex', justifyContent:'space-between', fontSize:13 }}>
+                <span style={{ color:'var(--fg-tertiary)' }}>{k}</span>
+                <span style={{ fontFamily:'var(--font-mono)', color:'var(--brand-blue-700)', fontWeight:600 }}>{v}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ height: 24 }} />
+        </Phone>
+      );
+    }
+
+    function AIReport() {
+      return (
+        <Phone header={<Header title="AI Report" gradient />}>
+          <div style={{ marginTop: 6 }}>
+            <AIScoreCard score={95} />
+          </div>
+          <div className="ak-section-title">Performance breakdown</div>
+          <div className="ak-card" style={{ padding: 16 }}>
+            {[['Speed',95],['Agility',94],['Strength',89],['Flexibility',86]].map(([k,v]) => (
+              <div key={k} style={{ marginBottom: 12 }}>
+                <div style={{ display:'flex', justifyContent:'space-between', fontSize:13, marginBottom:4 }}>
+                  <span style={{ color:'var(--fg-secondary)' }}>{k}</span>
+                  <span style={{ fontWeight:600 }}>{v}</span>
+                </div>
+                <div style={{ height:6, background:'var(--gray-100)', borderRadius:9999, overflow:'hidden' }}>
+                  <div style={{ height:'100%', width:`${v}%`, background:'var(--grad-cyan-blue)' }} />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="ak-section-title">Insight</div>
+          <div className="ak-card">
+            <p style={{ margin:0, fontSize:13, lineHeight:1.55, color:'var(--fg-secondary)' }}>
+              Exceptional route precision with NFL-level footwork. Elite separation skills at the top of routes. Reliable hands with strong catching radius. Excellent body control on contested catches.
+            </p>
+            <div style={{ marginTop: 12, fontSize: 12, color: 'var(--fg-tertiary)' }}>
+              Comparable: <b style={{ color:'var(--fg-primary)' }}>Hines Ward</b> (playing style)
+            </div>
+          </div>
+
+          <div className="ak-section-title">Projection</div>
+          <div className="ak-card" style={{ background:'var(--brand-blue-50)', borderColor:'rgba(33,150,243,0.25)', padding: 14 }}>
+            <div style={{ fontSize:11, color:'var(--brand-blue-700)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em' }}>Projection</div>
+            <div style={{ fontSize:14, fontWeight:600, marginTop:4 }}>Division I — Power 5 Conference</div>
+            <div style={{ fontSize:12, color:'var(--fg-secondary)', marginTop:2 }}>Top WR Prospect · Class of 2025</div>
+          </div>
+
+          <div style={{ height: 24 }} />
+        </Phone>
+      );
+    }
+
+    function App() {
+      return (
+        <div className="ak-stage">
+          <Home />
+          <AIReport />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

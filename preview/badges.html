@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Badges & status pills</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 22px; background: #fff; font-family: var(--font-body); }
+    .row { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 500;
+      padding: 4px 10px; border-radius: 9999px;
+      border: 1px solid transparent;
+    }
+    .gpa { background: var(--brand-blue); color: #fff; }
+    .match { background: rgba(255,255,255,0.95); color: var(--gray-900); border-color: var(--border-default); }
+    .country { background: rgba(0,0,0,0.6); color: #fff; }
+    .ncaa { background: var(--success-bg); color: var(--success-fg); }
+    .pending { background: var(--warning-bg); color: var(--warning-fg); }
+    .review { background: var(--brand-blue-50); color: var(--brand-blue-700); }
+    .ai { background: #F3E8FF; color: #6B21A8; }
+    .verified { background: var(--grad-athlink); color: #fff; }
+    .outline { background: #fff; color: var(--fg-secondary); border-color: var(--border-default); }
+    .ico { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .section-label { font-size: 11px; color: var(--fg-tertiary); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-bottom: 8px; display: block; }
+  </style>
+</head>
+<body>
+  <span class="section-label">Status</span>
+  <div class="row" style="margin-bottom:14px">
+    <span class="badge ncaa"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>NCAA Cleared</span>
+    <span class="badge pending">Pending Review</span>
+    <span class="badge review">Under Review</span>
+    <span class="badge ai"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>AI Score 95</span>
+    <span class="badge verified"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>AI Verified</span>
+  </div>
+  <span class="section-label">Athlete card overlays</span>
+  <div class="row">
+    <span class="badge gpa">GPA 3.9</span>
+    <span class="badge match">94% Match</span>
+    <span class="badge country">🇯🇵 Japan</span>
+    <span class="badge outline">All Sports</span>
+    <span class="badge outline">High Match Rate</span>
+    <span class="badge outline">D1</span>
+  </div>
+</body>
+</html>

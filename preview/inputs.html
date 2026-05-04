@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Form inputs</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 22px; background: #fff; font-family: var(--font-body); }
+    .row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .label { font-size: 12px; color: var(--fg-secondary); font-weight: 500; }
+    .input, .select {
+      width: 100%; box-sizing: border-box;
+      padding: 10px 14px; border-radius: 12px;
+      border: 1px solid var(--border-default);
+      background: #fff; color: var(--fg-primary);
+      font: 14px var(--font-body);
+      transition: all 150ms var(--ease-out);
+    }
+    .input::placeholder { color: var(--fg-quaternary); }
+    .input:focus, .select:focus {
+      outline: none; border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px rgba(33,150,243,0.15);
+    }
+    .search-wrap { position: relative; }
+    .search-wrap .input { padding-left: 38px; }
+    .search-wrap svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; stroke: var(--fg-tertiary); fill: none; stroke-width: 2; }
+    .select { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 12px center; appearance: none; padding-right: 36px; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="field">
+      <span class="label">Search athletes</span>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+        <input class="input" placeholder="Position, school, country…" />
+      </div>
+    </div>
+    <div class="field">
+      <span class="label">Sport</span>
+      <select class="select"><option>Football</option></select>
+    </div>
+    <div class="field">
+      <span class="label">Min GPA</span>
+      <select class="select"><option>3.5+</option></select>
+    </div>
+    <div class="field">
+      <span class="label">Country</span>
+      <select class="select"><option>Japan</option></select>
+    </div>
+  </div>
+</body>
+</html>

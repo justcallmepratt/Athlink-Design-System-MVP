@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Buttons</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 22px; background: #fff; font-family: var(--font-body); }
+    .grid { display: grid; grid-template-columns: repeat(4, max-content); gap: 14px 14px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 500;
+      padding: 10px 18px; border-radius: 8px; border: 1px solid transparent;
+      cursor: pointer; transition: all 150ms var(--ease-out);
+      white-space: nowrap;
+    }
+    .primary  { background: var(--brand-blue); color: #fff; }
+    .primary:hover { background: var(--brand-blue-700); box-shadow: var(--shadow-brand); }
+    .secondary { background: #fff; color: var(--fg-primary); border-color: var(--border-default); }
+    .secondary:hover { background: var(--gray-50); }
+    .ghost { background: transparent; color: var(--fg-secondary); }
+    .ghost:hover { background: var(--gray-100); color: var(--fg-primary); }
+    .destructive { background: #fff; color: var(--danger); border-color: #FECACA; }
+    .destructive:hover { background: var(--danger-bg); }
+    .gradient {
+      background: var(--grad-athlink); color: #fff;
+      box-shadow: 0 4px 12px -2px rgba(33,150,243,0.4);
+    }
+    .small { padding: 6px 12px; font-size: 13px; }
+    .large { padding: 14px 26px; font-size: 16px; border-radius: 10px; }
+    .ico { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <button class="btn primary"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>View report</button>
+    <button class="btn secondary">Save profile</button>
+    <button class="btn ghost">Cancel</button>
+    <button class="btn destructive">Pass</button>
+
+    <button class="btn primary small">Send</button>
+    <button class="btn secondary small">Filter</button>
+    <button class="btn ghost small">Skip</button>
+    <button class="btn gradient small"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>AI Verified</button>
+
+    <button class="btn primary large">Get started</button>
+    <button class="btn secondary large">Schedule Zoom</button>
+    <button class="btn gradient large">View AI Report</button>
+    <button class="btn destructive large" style="border-radius:9999px;width:56px;height:56px;padding:0">
+      <svg class="ico" viewBox="0 0 24 24" style="width:22px;height:22px"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+</body>
+</html>

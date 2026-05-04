@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Display type</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 24px; background: #fff; }
+    .row { display: flex; flex-direction: column; gap: 14px; }
+    .spec { display: flex; align-items: baseline; gap: 14px; }
+    .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-tertiary); width: 130px; flex: 0 0 130px; }
+    .display {
+      font-family: var(--font-display); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.05;
+      background: var(--grad-athlink);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; color: var(--fg-primary); line-height: 1.1; }
+    .h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; color: var(--fg-primary); line-height: 1.2; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="spec">
+      <span class="meta">Display · 48/800</span>
+      <span class="display" style="font-size: 48px;">Find your team.</span>
+    </div>
+    <div class="spec">
+      <span class="meta">H1 · 36/700</span>
+      <span class="h1" style="font-size: 36px;">Discover athletes worldwide</span>
+    </div>
+    <div class="spec">
+      <span class="meta">H2 · 24/700</span>
+      <span class="h2" style="font-size: 24px;">Recent Athletes</span>
+    </div>
+  </div>
+</body>
+</html>

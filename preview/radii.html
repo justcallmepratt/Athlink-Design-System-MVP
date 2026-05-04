@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Athlink — Corner radii</title>
+  <link rel="stylesheet" href="../colors_and_type.css" />
+  <style>
+    body { margin: 0; padding: 22px; background: #fff; font-family: var(--font-body); }
+    .row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+    .tile { aspect-ratio: 1; background: var(--brand-blue-50); border: 1.5px solid var(--brand-blue); display: flex; align-items: end; justify-content: center; padding: 8px; }
+    .meta { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: 8px; text-align: center; }
+    .name { font-size: 11px; font-weight: 600; color: var(--fg-primary); }
+    .val  { font-family: var(--font-mono); font-size: 10px; color: var(--fg-tertiary); }
+    .col  { display: flex; flex-direction: column; }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col"><div class="tile" style="border-radius:4px"></div><div class="meta"><span class="name">xs</span><span class="val">4 px</span></div></div>
+    <div class="col"><div class="tile" style="border-radius:6px"></div><div class="meta"><span class="name">sm</span><span class="val">6 px</span></div></div>
+    <div class="col"><div class="tile" style="border-radius:8px"></div><div class="meta"><span class="name">md · btn</span><span class="val">8 px</span></div></div>
+    <div class="col"><div class="tile" style="border-radius:12px"></div><div class="meta"><span class="name">lg · card</span><span class="val">12 px</span></div></div>
+    <div class="col"><div class="tile" style="border-radius:16px"></div><div class="meta"><span class="name">xl · input</span><span class="val">16 px</span></div></div>
+    <div class="col"><div class="tile" style="border-radius:24px"></div><div class="meta"><span class="name">3xl</span><span class="val">24 px</span></div></div>
+    <div class="col"><div class="tile" style="border-radius:9999px"></div><div class="meta"><span class="name">full · pill</span><span class="val">9999 px</span></div></div>
+  </div>
+</body>
+</html>
